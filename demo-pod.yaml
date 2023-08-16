@@ -14,8 +14,6 @@ spec:
       readinessProbe:
         httpGet:
           port: 8080
-      nodeSelector:
-        nodeName: node3
       resources:
         requests:
           cpu: "1000m"
@@ -23,3 +21,5 @@ spec:
         limits:
           cpu: "1500m"
           memory: "600Mi"
+  nodeName: node3
+    
