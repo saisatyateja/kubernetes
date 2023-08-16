@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Pod 
+metadata: 
+  name: demo-pod
+spec: 
+  containers: 
+    - name: demo-pod
+      image: saisatyateja/stdcourse:0.1
+      ports: 
+        - containerPort: 8080
+      livenessProbe:
+        httpGet: 
+          port: 8080
+      readinessProbe:
+        httpGet:
+          port: 8080
+      nodeSelector:
+        nodeName: node3
+      resources:
+        requests:
+          cpu: "1000m"
+          memory: "500Mi"
+        limits:
+          cpu: "1500m"
+          memory: "600Mi"
