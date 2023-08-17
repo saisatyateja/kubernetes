@@ -19,6 +19,9 @@ spec:
       containers:
         - name: demo-deployment
           image: saisatyateja/studentcourserestapi:1.0
+          envFrom:
+            - configMapRef:
+                name: demo-configmap-1
           ports:
             - containerPort: 8080
           livenessProbe:
